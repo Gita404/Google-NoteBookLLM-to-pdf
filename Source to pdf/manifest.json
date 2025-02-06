@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Source Guide to PDF",
+    "version": "1.0",
+    "description": "Extracts the source guide and saves it as a PDF.",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabs"
+    ],
+    "host_permissions": [
+        "https://notebooklm.google.com/*"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/16x16_.png",
+            "48": "icons/48x48_.png",
+            "128": "icons/icon128.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://notebooklm.google.com/*"],
+            "js": ["contentScript.js"]
+        }
+    ],
+    "web_accessible_resources": [{
+        "resources": ["jspdf.umd.min.js"],
+        "matches": ["https://notebooklm.google.com/*"]
+    }]
+}

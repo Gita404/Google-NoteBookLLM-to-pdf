@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Conversation</title>
+    <script src="jspdf.umd.min.js"></script>
+    <style>
+        body {
+            width: 200px;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .menu-container {
+            padding: 8px 0;
+        }
+
+        .primary-button {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 8px 16px;
+            background-color: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .primary-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .primary-button svg {
+            margin-right: 8px;
+        }
+
+        .dropdown-icon {
+            margin-left: auto;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .menu-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-item input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: 8px 0;
+        }
+
+        .icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <button id="download-conversation" class="primary-button">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v13m0 0l-3-3m3 3l3-3m-3 3v6" stroke="white"/>
+                <path d="M3 15v4a2 2 0 002 2h14a2 2 0 002-2v-4" stroke="white"/>
+            </svg>
+            Save Conversation as PDF
+        </button>
+
+        <button id="download-notes" class="primary-button">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v13m0 0l-3-3m3 3l3-3m-3 3v6" stroke="white"/>
+                <path d="M3 15v4a2 2 0 002 2h14a2 2 0 002-2v-4" stroke="white"/>
+            </svg>
+            Save Notes as PDF
+        </button>
+
+        <button id="download-sources" class="primary-button">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v13m0 0l-3-3m3 3l3-3m-3 3v6" stroke="white"/>
+                <path d="M3 15v4a2 2 0 002 2h14a2 2 0 002-2v-4" stroke="white"/>
+            </svg>
+            Save Sources as PDF
+        </button>
+
+        <div class="menu-options">
+            <div class="menu-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M9 3h6m-6 0v18m0-18H4m5 18H4m11-18h5m-5 18h5" stroke="white"/>
+                </svg>
+                Select Messages
+            </div>
+
+            <div class="menu-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M4 4h16v16H4z" stroke="white"/>
+                    <path d="M8 8h8v8H8z" stroke="white"/>
+                </svg>
+                Change Page Size
+            </div>
+
+            <div class="menu-item">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z" stroke="white"/>
+                </svg>
+                Rate This Extension
+            </div>
+
+            <div class="divider"></div>
+
+            <label class="menu-item">
+                <input type="checkbox" id="remove-logo">
+                Remove Logo
+            </label>
+
+            <label class="menu-item">
+                <input type="checkbox" id="landscape-mode">
+                Landscape Mode
+            </label>
+
+            <label class="menu-item">
+                <input type="checkbox" id="add-toc">
+                Add Table of Content
+            </label>
+
+            <label class="menu-item">
+                <input type="checkbox" id="gpt-only">
+                Only Noteooklm Responses
+            </label>
+        </div>
+    </div>
+</body>
+</html>

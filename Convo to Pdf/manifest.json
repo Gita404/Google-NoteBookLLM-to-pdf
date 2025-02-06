@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "NotebookLM to PDF",
+    "version": "1.0",
+    "description": "Download NotebookLM conversations as PDF",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabs"
+    ],
+    "host_permissions": [
+        "https://notebooklm.google.com/*"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "16x16.png",
+            "48": "48x48.png",
+            "128": "128x128.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://notebooklm.google.com/*"],
+            "js": ["contentScript.js"]
+        }
+    ],
+    "web_accessible_resources": [{
+        "resources": ["jspdf.umd.min.js"],
+        "matches": ["https://notebooklm.google.com/*"]
+    }]
+}
